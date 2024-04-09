@@ -1,12 +1,14 @@
+
 steps:
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'global-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/my-image:latest', '.']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/akapen1', '.']
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'global-docker.pkg.dev/$PROJECT_ID/my-docker-repo/my-image']
+  args: ['push', 'gcr.io/$PROJECT_ID/akapen1']
 # Deploy container image to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: ['run', 'deploy', 'my-image', '--image', 'global-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/my-image:latest',  '--platform', 'managed','--allow-unauthenticated']
-
+  $PROJECT_ID args: ['run', 'deploy', 'akapne-run', '--image', 'gcr.io//akapen1', '--region', 'asia-northeast1']
+images:
+- gcr.io/$PROJECT_ID/kk
