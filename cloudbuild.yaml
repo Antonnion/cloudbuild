@@ -9,6 +9,6 @@ steps:
 # Deploy container image to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  $PROJECT_ID args: ['run', 'deploy', 'akapne-run', '--image', 'gcr.io//akapen1', '--region', 'asia-northeast1']
+  args: ['run', 'deploy', 'akapne-run', '--image', 'gcr.io//akapen1', '--region', 'asia-northeast1']
 images:
 - gcr.io/$PROJECT_ID/kk
