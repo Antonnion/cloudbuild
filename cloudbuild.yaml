@@ -8,4 +8,4 @@ steps:
 # Deploy container image to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: ['run', 'deploy', 'my-image', '--image', 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/my-image:latest', '--platform', 'managed','--allow-unauthenticated']
+  args: ['run', 'deploy', 'my-image', '--image', 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/my-image:latest', '--platform', 'managed','--allow-unauthenticated', '--region', 'asia-northeast1']
