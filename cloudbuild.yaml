@@ -9,9 +9,6 @@ steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
   args: ['beta', 'run', 'deploy', 'my-image', '--image', 'asia-northeast1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/my-image:latest', '--platform', 'managed','--allow-unauthenticated', '--ingress', 'all', '--region', 'asia-northeast1', '--project', '${PROJECT_ID}', '--quiet']
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  entrypoint: gcloud
-  args: ['beta', 'run', 'services', 'add-iam-policy-binding', 'my-image', '--member=allUsers', '--role=roles/run.invoker', '--region=asia-northeast1', '--project', '${PROJECT_ID}']
 
 logsBucket: 'klishimoto-kei'
 serviceAccount: 'projects/${PROJECT_ID}/serviceAccounts/ca-cicd-cloudbuild@${PROJECT_ID}.iam.gserviceaccount.com'
